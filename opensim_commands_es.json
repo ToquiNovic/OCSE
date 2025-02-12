@@ -1,0 +1,817 @@
+[
+    {
+        "category": "Comandos generales del servidor",
+        "commands": [
+            {
+                "command": "command-script [scriptfile]",
+                "description": "Ejecuta un script de comando que contiene comandos de consola."
+            },
+            {
+                "command": "quit",
+                "description": "apagar el servidor."
+            },
+            {
+                "command": "show info",
+                "description": "Muestra información del servidor (versión y ruta de inicio). Antes de OpenSimulator 0.7.5, esta función solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "show uptime",
+                "description": "Muestra la hora de inicio y el tiempo de actividad del servidor. Antes de OpenSimulator 0.7.5, esta función solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "show version",
+                "description": "Mostrar la versión del servidor. Antes de OpenSimulator 0.7.5, esta opción solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "shutdown",
+                "description": "sinónimo de dejar de fumar"
+            },
+            {
+                "command": "get log level",
+                "description": "En OpenSimulator 0.7.5 y versiones posteriores, imprima el nivel de registro de la consola actual. En OpenSimulator 0.7.4 y versiones anteriores, utilice el comando \"establecer nivel de registro\" sin un parámetro de nivel."
+            },
+            {
+                "command": "set log level [level]",
+                "description": "Solo cambia el nivel de registro de la consola. Por ejemplo, desactivado o depuración. Consulta Registro para obtener más información. En OpenSimulator 0.7.4 y versiones anteriores, si se llama sin el argumento de nivel, se imprime el nivel actual. En OpenSimulator 0.7.5 y versiones posteriores, utiliza el comando \"obtener nivel de registro\" en su lugar. Solo disponible en la consola ROBUST a partir de OpenSimulator 0.7.5."
+            }
+        ]
+    },
+    {
+        "category": "General",
+        "commands": [
+            {
+                "command": "command-script [scriptfile]",
+                "description": "Ejecuta un script de comando que contiene comandos de consola."
+            },
+            {
+                "command": "quit",
+                "description": "apagar el servidor."
+            },
+            {
+                "command": "show info",
+                "description": "Muestra información del servidor (versión y ruta de inicio). Antes de OpenSimulator 0.7.5, esta función solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "show uptime",
+                "description": "Muestra la hora de inicio y el tiempo de actividad del servidor. Antes de OpenSimulator 0.7.5, esta función solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "show version",
+                "description": "Mostrar la versión del servidor. Antes de OpenSimulator 0.7.5, esta opción solo estaba disponible en la consola del simulador."
+            },
+            {
+                "command": "shutdown",
+                "description": "sinónimo de dejar de fumar"
+            },
+            {
+                "command": "get log level",
+                "description": "En OpenSimulator 0.7.5 y versiones posteriores, imprima el nivel de registro de la consola actual. En OpenSimulator 0.7.4 y versiones anteriores, utilice el comando \"establecer nivel de registro\" sin un parámetro de nivel."
+            },
+            {
+                "command": "set log level [level]",
+                "description": "Solo cambia el nivel de registro de la consola. Por ejemplo, desactivado o depuración. Consulta Registro para obtener más información. En OpenSimulator 0.7.4 y versiones anteriores, si se llama sin el argumento de nivel, se imprime el nivel actual. En OpenSimulator 0.7.5 y versiones posteriores, utiliza el comando \"obtener nivel de registro\" en su lugar. Solo disponible en la consola ROBUST a partir de OpenSimulator 0.7.5."
+            }
+        ]
+    },
+    {
+        "category": "Depurar",
+        "commands": [
+            {
+                "command": "debug http [<level>]",
+                "description": "Activar o desactivar el registro adicional para la depuración de solicitudes HTTP. Solo disponible en la consola robusta a partir de la confirmación 94517c8 (código de desarrollo, publicación 0.7.3.1). En el código de desarrollo actual (para OpenSimulator 0.7.5), esto es debug http in|out|all [<level>] ya que ahora también se pueden registrar los mensajes HTTP salientes (antes esto solo era posible para los entrantes). Para obtener más información sobre este comando, consulte Depuración."
+            }
+        ]
+    },
+    {
+        "category": "Comandos del simulador",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "Los comandos subsiguientes se aplican únicamente a la región especificada. Si el nombre de la región es \"root\", se seleccionan todas las regiones."
+            },
+            {
+                "command": "debug packet <level>",
+                "description": "Active la depuración de paquetes, donde OpenSimulator imprime resúmenes de los paquetes entrantes y salientes para los espectadores, según el nivel establecido"
+            },
+            {
+                "command": "emergency-monitoring",
+                "description": "Activar o desactivar el modo de monitoreo de depuración de emergencia."
+            },
+            {
+                "command": "help [<command>]",
+                "description": "Obtenga una lista general de comandos o ayuda más detallada sobre un comando específico o un conjunto de comandos"
+            },
+            {
+                "command": "link-mapping",
+                "description": "Establezca una coordenada de cuadrícula local para vincularla a una hiperred remota"
+            },
+            {
+                "command": "link-region",
+                "description": "Vincular una región HyperGrid. No estoy seguro de en qué se diferencia de la asignación de vínculos"
+            },
+            {
+                "command": "modules list",
+                "description": "Lista de módulos"
+            },
+            {
+                "command": "modules load <name>",
+                "description": "Cargar un módulo"
+            },
+            {
+                "command": "modules unload <name>",
+                "description": "Descargar un módulo"
+            },
+            {
+                "command": "monitor report",
+                "description": "Devuelve una variedad de estadísticas sobre la región actual y/o el simulador."
+            },
+            {
+                "command": "set terrain heights <corner> <min> <max> [<x>] [<y>]",
+                "description": "Establece las alturas de textura del terreno en la esquina n.° <corner> en <min>/<max>; si se especifican <x> o <y>, solo se establecerán en regiones con una coordenada coincidente. Especifique -1 en <x> o <y> para usar como comodín esa coordenada. Esquina n.° SO = 0, NO = 1, SE = 2, NE = 3."
+            },
+            {
+                "command": "set terrain texture <number> <uuid> [<x>] [<y>]",
+                "description": "Establece el terreno <number> en <uuid>. Si se especifican <x> o <y>, solo se establecerá en regiones con una coordenada coincidente. Especifique -1 en <x> o <y> para utilizar comodín esa coordenada."
+            },
+            {
+                "command": "show caps",
+                "description": "Mostrar todas las URL de capacidades registradas"
+            }
+        ]
+    },
+    {
+        "category": "General",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "Los comandos subsiguientes se aplican únicamente a la región especificada. Si el nombre de la región es \"root\", se seleccionan todas las regiones."
+            },
+            {
+                "command": "debug packet <level>",
+                "description": "Active la depuración de paquetes, donde OpenSimulator imprime resúmenes de los paquetes entrantes y salientes para los espectadores, según el nivel establecido"
+            },
+            {
+                "command": "emergency-monitoring",
+                "description": "Activar o desactivar el modo de monitoreo de depuración de emergencia."
+            },
+            {
+                "command": "help [<command>]",
+                "description": "Obtenga una lista general de comandos o ayuda más detallada sobre un comando específico o un conjunto de comandos"
+            },
+            {
+                "command": "link-mapping",
+                "description": "Establezca una coordenada de cuadrícula local para vincularla a una hiperred remota"
+            },
+            {
+                "command": "link-region",
+                "description": "Vincular una región HyperGrid. No estoy seguro de en qué se diferencia de la asignación de vínculos"
+            },
+            {
+                "command": "modules list",
+                "description": "Lista de módulos"
+            },
+            {
+                "command": "modules load <name>",
+                "description": "Cargar un módulo"
+            },
+            {
+                "command": "modules unload <name>",
+                "description": "Descargar un módulo"
+            },
+            {
+                "command": "monitor report",
+                "description": "Devuelve una variedad de estadísticas sobre la región actual y/o el simulador."
+            },
+            {
+                "command": "set terrain heights <corner> <min> <max> [<x>] [<y>]",
+                "description": "Establece las alturas de textura del terreno en la esquina n.° <corner> en <min>/<max>; si se especifican <x> o <y>, solo se establecerán en regiones con una coordenada coincidente. Especifique -1 en <x> o <y> para usar como comodín esa coordenada. Esquina n.° SO = 0, NO = 1, SE = 2, NE = 3."
+            },
+            {
+                "command": "set terrain texture <number> <uuid> [<x>] [<y>]",
+                "description": "Establece el terreno <number> en <uuid>. Si se especifican <x> o <y>, solo se establecerá en regiones con una coordenada coincidente. Especifique -1 en <x> o <y> para utilizar comodín esa coordenada."
+            },
+            {
+                "command": "show caps",
+                "description": "Mostrar todas las URL de capacidades registradas"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de apariencia",
+        "commands": [
+            {
+                "command": "appearance find <uuid-or-start-of-uuid>",
+                "description": "Descubra qué avatar usa el activo dado como textura horneada, si corresponde."
+            },
+            {
+                "command": "appearance rebake <first-name> <last-name>",
+                "description": "Envía una solicitud al visor del usuario para que vuelva a hornear y cargar sus texturas de apariencia."
+            },
+            {
+                "command": "appearance send [<first-name> <last-name>]",
+                "description": "Envía datos de apariencia de cada avatar en el simulador a otros espectadores."
+            },
+            {
+                "command": "appearance show [<first-name> <last-name>]",
+                "description": "Mostrar información de apariencia de los avatares."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de archivo",
+        "commands": [
+            {
+                "command": "load iar <first> <last> <inventory path> <password> [<archive path>]",
+                "description": "Cargar archivo de inventario de usuario. Ver Archivos de inventario."
+            },
+            {
+                "command": "load oar [filename]",
+                "description": "Cargar un archivo de OpenSimulator. Esto reemplaza por completo la región actual. El nombre de archivo predeterminado es region.oar. Ver Archivos de OpenSim."
+            },
+            {
+                "command": "load xml [-newIDs [<x> <y> <z>]]",
+                "description": "Cargar los datos de una región desde el formato XML (0.7.*: OBSOLETO y puede ser ELIMINADO pronto. Utilice \"load xml2\" en su lugar)"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de activos",
+        "commands": [
+            {
+                "command": "fcache assets",
+                "description": "Intente realizar un análisis profundo y almacenar en caché todos los activos en todas las escenas"
+            },
+            {
+                "command": "fcache clear [file] [memory]",
+                "description": "Eliminar todos los activos de la memoria caché. Si se especifica un archivo o una memoria, solo se borrará esta memoria caché."
+            },
+            {
+                "command": "fcache expire <datetime>",
+                "description": "Purgar los activos almacenados en caché que sean más antiguos que la fecha y hora especificadas"
+            },
+            {
+                "command": "fcache status",
+                "description": "Mostrar el estado de la caché"
+            },
+            {
+                "command": "j2k decode <ID>",
+                "description": "Realizar la decodificación JPEG2000 de un activo."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de configuración",
+        "commands": [
+            {
+                "command": "config get [<section>] [<key>]",
+                "description": "Obtenga la configuración actual, ya sea para una clave particular, una sección particular o la configuración completa."
+            },
+            {
+                "command": "config save <path>",
+                "description": "Guardar la configuración actual en un archivo."
+            },
+            {
+                "command": "config set <section> <key>",
+                "description": "Establezca un valor de configuración particular. En general, esto es inútil ya que ni OpenSimulator ni los módulos recargan dinámicamente los valores de configuración."
+            },
+            {
+                "command": "config show [<section>] [<key>]",
+                "description": "Sinónimo de 'config get'"
+            }
+        ]
+    },
+    {
+        "category": "Comandos terrestres",
+        "commands": [
+            {
+                "command": "land show",
+                "description": "Muestra todas las parcelas de la región actual."
+            },
+            {
+                "command": "land clear",
+                "description": "Limpia todas las parcelas del terreno."
+            }
+        ]
+    },
+    {
+        "category": "Comandos del mapa",
+        "commands": [
+            {
+                "command": "export-map [<path>]",
+                "description": "Guardar una imagen del mapa del mundo (el nombre predeterminado es exportmap.jpg)"
+            },
+            {
+                "command": "generate map",
+                "description": "Regenera y almacena los mosaicos del mapa. Solo en el código de desarrollo posterior a la versión 0.7.6."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de objetos",
+        "commands": [
+            {
+                "command": "backup",
+                "description": "Conservar los cambios de objetos no guardados actualmente de forma inmediata en lugar de esperar la llamada de persistencia normal. Normalmente, esto no debería ser necesario: el simulador conserva los objetos de la región automáticamente a intervalos regulares y al apagarse."
+            },
+            {
+                "command": "delete object creator <UUID>",
+                "description": "Eliminar un objeto de escena por creador"
+            },
+            {
+                "command": "delete object name [--regex] <name>",
+                "description": "Eliminar un objeto de escena por nombre."
+            },
+            {
+                "command": "delete object outside",
+                "description": "Eliminar todos los objetos de la escena que se encuentran fuera de los límites de la región. Actualmente, esto se aplica si z < 0 o z > 10000. Se sabe que los objetos que se encuentran fuera de estos límites causan problemas con el uso de algunos motores de física por parte de OpenSimulator (como Open Dynamics Engine)."
+            },
+            {
+                "command": "delete object owner <UUID>",
+                "description": "Eliminar un objeto de escena por propietario"
+            },
+            {
+                "command": "delete object id <UUID-or-localID>",
+                "description": "Eliminar un objeto de escena por uuid o localID. Antes de la versión 0.7.5, esto era \"eliminar uuid de objeto\"."
+            },
+            {
+                "command": "dump object id <UUID-or-localID>",
+                "description": "Vuelca la serialización del objeto dado a un archivo para fines de depuración."
+            },
+            {
+                "command": "edit scale <name> <x> <y> <z>",
+                "description": "Cambiar la escala de un prim nombrado"
+            },
+            {
+                "command": "force update",
+                "description": "Obligar a la región a enviar a todos los clientes actualizaciones sobre todos los objetos."
+            },
+            {
+                "command": "show object name [--regex] <name>",
+                "description": "Mostrar detalles de los objetos de la escena con el nombre dado."
+            },
+            {
+                "command": "show object id <UUID-or-localID>",
+                "description": "Muestra los detalles de un objeto de escena con el UUID o el ID local indicados. Antes de la versión 0.7.5, se hacía \"mostrar UUID del objeto\"."
+            },
+            {
+                "command": "show part name [--regex] <name>",
+                "description": "Mostrar detalles de las partes del objeto de la escena con el nombre dado."
+            },
+            {
+                "command": "show part id <UUID-or-localID>",
+                "description": "Muestra los detalles de las partes de un objeto de escena con el UUID o el ID local indicados. Antes de la versión 0.7.5, se hacía \"mostrar UUID de la parte\"."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de finca",
+        "commands": [
+            {
+                "command": "reload estate",
+                "description": "recargar datos de la finca"
+            },
+            {
+                "command": "estate link region <estate ID> <region ID>",
+                "description": "Adjunta la región especificada al patrimonio especificado."
+            },
+            {
+                "command": "estate show",
+                "description": "Este comando mostrará el nombre, el ID y el propietario de la propiedad de las regiones que se están ejecutando actualmente en el simulador. Esta lista no incluye necesariamente todas las propiedades que están presentes en la base de datos."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de región",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "Los comandos subsiguientes se aplican únicamente a la región especificada. Si el nombre de la región es \"root\", se seleccionan todas las regiones."
+            },
+            {
+                "command": "create region [name] [filename]",
+                "description": "Crear una nueva región"
+            },
+            {
+                "command": "delete-region <name>",
+                "description": "Eliminar una región del disco."
+            },
+            {
+                "command": "region get",
+                "description": "Publicación de OpenSimulator 0.8.0.*. Mostrar parámetros de región (nombre de región, UUID de región, ubicación, URI, ID de propietario, indicadores)."
+            },
+            {
+                "command": "region restart abort [<message>]",
+                "description": "Anular un reinicio programado de una región, con un mensaje opcional"
+            },
+            {
+                "command": "region restart bluebox <message> <delta seconds>+",
+                "description": "Programar un reinicio de región. Si se proporciona un delta, la región se reinicia en segundos delta. Se envía un tiempo de reinicio a los usuarios de la región como un aviso de cuadro azul que se puede descartar. Si se proporcionan varios deltas, se envía un aviso cuando alcanzamos cada delta."
+            },
+            {
+                "command": "region restart notice <message> <delta seconds>+",
+                "description": "Programar un reinicio de la región. Igual que el anterior, excepto que se muestra un aviso transitorio en lugar de un cuadro azul que se puede descartar."
+            },
+            {
+                "command": "region set",
+                "description": "Post OpenSimulator 0.8.0.*. Establezca ciertos parámetros de región. Actualmente, puede establecer\nagent-limit: el límite de avatar actual para la región. Por lo general, esto se establece a través del cuadro de diálogo región/estado en un visor típico. Esto persiste después de reiniciar el simulador.\nmax-agent-limit: el valor máximo que puede tener agent-limit. Lamentablemente, configurarlo aquí actualmente no persiste después de reiniciar el servidor. Para que eso suceda, debe configurarse por separado como el parámetro MaxAgents en el archivo de configuración de la región."
+            },
+            {
+                "command": "agent-limit",
+                "description": "El límite actual de avatares para la región. Por lo general, esto se establece a través del cuadro de diálogo de región/estado en un visor típico. Esto persiste después de reiniciar el simulador."
+            },
+            {
+                "command": "max-agent-limit",
+                "description": "El valor máximo que puede tener agent-limit. Lamentablemente, configurarlo aquí actualmente no persiste después de reiniciar el servidor. Para que eso suceda, debe configurarse por separado como el parámetro MaxAgents en el archivo de configuración de la región."
+            },
+            {
+                "command": "remove-region",
+                "description": "eliminar una región del simulador"
+            },
+            {
+                "command": "restart",
+                "description": "Reinicia todos los Sims en esta instancia."
+            },
+            {
+                "command": "restart region <regionname>",
+                "description": "Reinicia solo un Sim por instancia. Primero, configura la consola con el nombre de la región con \"cambiar región <nombre_región>\" o se reiniciarán todas las regiones."
+            },
+            {
+                "command": "set region flags <Region name> <flags>",
+                "description": "Establecer indicadores de base de datos para la región"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de escena",
+        "commands": [
+            {
+                "command": "debug scene",
+                "description": "Activar la depuración de escenas"
+            },
+            {
+                "command": "rotate scene <degrees>",
+                "description": "Gira la escena alrededor del eje 128,128 por x grados donde x=0-360."
+            },
+            {
+                "command": "scale scene <factor>",
+                "description": "Escala todos los objetos de la escena mediante un factor donde el tamaño original = 1,0."
+            },
+            {
+                "command": "translate scene <x,y,z>",
+                "description": "Trasladar (mover) toda la escena a una nueva coordenada. Resulta útil para mover una escena a una ubicación diferente en una región Mega o Variable."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de script",
+        "commands": [
+            {
+                "command": "scripts resume [<script-item-uuid>]",
+                "description": "Reanuda todos los scripts suspendidos"
+            },
+            {
+                "command": "scripts show [<script-item-uuid>]",
+                "description": "Mostrar información del script. La opción <script-item-uuid> solo existe desde git master 82f0e19 (2012-01-14) en adelante (posterior a OpenSimulator 0.7.2)."
+            },
+            {
+                "command": "scripts start [<script-item-uuid>]",
+                "description": "Inicia todos los scripts detenidos"
+            },
+            {
+                "command": "scripts stop [<script-item-uuid>]",
+                "description": "Detiene todos los scripts en ejecución"
+            },
+            {
+                "command": "scripts suspend [<script-item-uuid>]",
+                "description": "Suspende todos los scripts en ejecución"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de estadísticas",
+        "commands": [
+            {
+                "command": "show stats",
+                "description": "Muestra información estadística útil para este servidor. Consulta los valores de estadísticas de trama a continuación para obtener más información."
+            },
+            {
+                "command": "stats show",
+                "description": "un sinónimo de \"mostrar estadísticas\" (solo código de desarrollo de OpenSimulator posterior al 19 de marzo de 2014)."
+            },
+            {
+                "command": "stats record",
+                "description": "Registrar estadísticas periódicamente en un archivo de registro separado."
+            },
+            {
+                "command": "stats save",
+                "description": "guardar una instantánea de las estadísticas actuales en un archivo (solo código de desarrollo de OpenSimulator posterior al 19 de marzo de 2014)."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de terreno",
+        "commands": [
+            {
+                "command": "terrain load",
+                "description": "Carga un terreno desde un archivo especificado. (ver nota 1)"
+            },
+            {
+                "command": "terrain load-tile",
+                "description": "Carga un terreno de una sección de un archivo más grande."
+            },
+            {
+                "command": "terrain save",
+                "description": "Guarda el mapa de altura actual en un archivo especificado."
+            },
+            {
+                "command": "terrain save-tile",
+                "description": "Guarda el mapa de altura actual en el archivo más grande."
+            },
+            {
+                "command": "terrain fill",
+                "description": "Rellena el mapa de altura actual con un valor especificado."
+            },
+            {
+                "command": "terrain elevate",
+                "description": "Aumenta el mapa de altura actual en la cantidad especificada."
+            },
+            {
+                "command": "terrain lower",
+                "description": "Reduce el mapa de altura actual en la cantidad especificada."
+            },
+            {
+                "command": "terrain multiply",
+                "description": "Multiplica el mapa de altura por el valor especificado."
+            },
+            {
+                "command": "terrain bake",
+                "description": "Guarda el terreno actual en el mapa creado por las regiones."
+            },
+            {
+                "command": "terrain revert",
+                "description": "Carga el terreno del mapa horneado en el mapa de altura de las regiones."
+            },
+            {
+                "command": "terrain newbrushes",
+                "description": "Habilita pinceles experimentales que reemplazan los pinceles de terreno estándar."
+            },
+            {
+                "command": "terrain show",
+                "description": "Muestra la altura del terreno en una coordenada determinada."
+            },
+            {
+                "command": "terrain stats",
+                "description": "Muestra información sobre el mapa de altura de las regiones para fines de depuración."
+            },
+            {
+                "command": "terrain effect",
+                "description": "Ejecuta un efecto de complemento específico"
+            },
+            {
+                "command": "terrain flip",
+                "description": "Invierte el terreno actual sobre el eje X o Y"
+            },
+            {
+                "command": "terrain rescale",
+                "description": "Reescala el terreno actual para que se ajuste entre las alturas mínima y máxima dadas."
+            },
+            {
+                "command": "terrain min",
+                "description": "Establece la altura mínima del terreno en el valor especificado."
+            },
+            {
+                "command": "terrain max",
+                "description": "Establece la altura máxima del terreno en el valor especificado."
+            },
+            {
+                "command": "terrain modify",
+                "description": "Proporciona varios comandos de terraformación de área de efecto."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de árbol",
+        "commands": [
+            {
+                "command": "tree active",
+                "description": "Cambiar el estado de actividad del módulo de árboles"
+            },
+            {
+                "command": "tree freeze",
+                "description": "Actividad de congelación/descongelación para un bosque definido"
+            },
+            {
+                "command": "tree load",
+                "description": "Cargar una definición de bosque desde un archivo xml"
+            },
+            {
+                "command": "tree plant",
+                "description": "Comenzar la plantación en un bosquecillo"
+            },
+            {
+                "command": "tree rate",
+                "description": "Restablecer la tasa de actualización del árbol (ms)"
+            },
+            {
+                "command": "tree reload",
+                "description": "Recargar las definiciones de bosquecillos desde los árboles en escena"
+            },
+            {
+                "command": "tree remove",
+                "description": "Eliminar una definición de bosquecillo y todos sus árboles en escena"
+            },
+            {
+                "command": "tree statistics",
+                "description": "Registrar estadísticas sobre los árboles"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de usuario",
+        "commands": [
+            {
+                "command": "alert <message>",
+                "description": "Enviar una alerta mundial a todos"
+            },
+            {
+                "command": "alert-user <first> <last> <message>",
+                "description": "Enviar una alerta en el mundo a un usuario específico"
+            },
+            {
+                "command": "bypass permissions <true / false>",
+                "description": "Evitar los controles de permisos internos"
+            },
+            {
+                "command": "debug permissions",
+                "description": "Activar la depuración de permisos"
+            },
+            {
+                "command": "force permissions",
+                "description": "Forzar permisos activados o desactivados."
+            },
+            {
+                "command": "kick user <first> <last> [message]:",
+                "description": "Expulsar a un usuario del simulador"
+            },
+            {
+                "command": "login disable",
+                "description": "Deshabilitar la entrada del usuario a este simulador"
+            },
+            {
+                "command": "login enable",
+                "description": "Habilitar la entrada del usuario a este simulador"
+            },
+            {
+                "command": "login status",
+                "description": "Muestra si los inicios de sesión en este simulador están habilitados o deshabilitados"
+            },
+            {
+                "command": "show users [full]- show info about currently connected users to this region. Without the 'full' option, only users actually on the region are shown. With the 'full' option child agents of users in neighbouring regions are also shown.",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "teleport user <destination>",
+                "description": "Teletransportar a un usuario de este simulador a un destino específico. Actualmente, solo en el código de desarrollo de OpenSimulator después de la versión 0.7.3.1 (commit bf0b817)."
+            }
+        ]
+    },
+    {
+        "category": "Comandos de Windlight/LightShare",
+        "commands": [
+            {
+                "command": "windlight load",
+                "description": "Cargar el perfil de luz del viento desde la base de datos y transmitirlo"
+            },
+            {
+                "command": "windlight enable",
+                "description": "Habilitar el complemento Windlight"
+            },
+            {
+                "command": "windlight disable",
+                "description": "Deshabilitar el complemento Windlight"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de YEngine",
+        "commands": [
+            {
+                "command": "yeng help",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "yeng reset -all | <part-of-script-name>",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "yeng resume",
+                "description": "reanudar el procesamiento del guión"
+            },
+            {
+                "command": "yeng suspend",
+                "description": "Suspender el procesamiento del script"
+            },
+            {
+                "command": "yeng ls -full -max=<number> -out=<filename> -queues -topcpu",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "yeng cvv",
+                "description": "mostrar el valor de la versión del compilador"
+            },
+            {
+                "command": "yeng mvv [<newvalue>]",
+                "description": "mostrar el valor de la versión de migración"
+            },
+            {
+                "command": "yeng tracecalls [yes | no]",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "yeng verbose [yes | no]",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "yeng pev -all | <part-of-script-name> <event-name> <params...>",
+                "description": "No hay descripción disponible"
+            }
+        ]
+    },
+    {
+        "category": "Comandos de servicio ROBUST",
+        "commands": [
+            {
+                "command": "delete asset <ID>",
+                "description": "Eliminar un activo de la base de datos. No parece estar implementado."
+            },
+            {
+                "command": "dump asset <ID>",
+                "description": "Vuelca un activo al sistema de archivos. OpenSimulator 0.7.3 en adelante."
+            },
+            {
+                "command": "show digest <ID>",
+                "description": "Mostrar información resumida sobre un activo. A partir de OpenSimulator 0.7.3, este campo pasará a llamarse \"mostrar activo\"."
+            }
+        ]
+    },
+    {
+        "category": "Servicio de activos",
+        "commands": [
+            {
+                "command": "delete asset <ID>",
+                "description": "Eliminar un activo de la base de datos. No parece estar implementado."
+            },
+            {
+                "command": "dump asset <ID>",
+                "description": "Vuelca un activo al sistema de archivos. OpenSimulator 0.7.3 en adelante."
+            },
+            {
+                "command": "show digest <ID>",
+                "description": "Mostrar información resumida sobre un activo. A partir de OpenSimulator 0.7.3, este campo pasará a llamarse \"mostrar activo\"."
+            }
+        ]
+    },
+    {
+        "category": "Servicio de red",
+        "commands": [
+            {
+                "command": "set region flags <Region name> <flags>",
+                "description": "Establecer indicadores de base de datos para la región"
+            },
+            {
+                "command": "show region <Region name>",
+                "description": "Muestra los detalles de una región determinada. Este comando se llama \"mostrar nombre de región\" en las versiones de desarrollo de OpenSimulator."
+            }
+        ]
+    },
+    {
+        "category": "Servicio al usuario",
+        "commands": [
+            {
+                "command": "create user [first] [last] [passw] [Email] [Primary UUID] [Model}",
+                "description": "crea un nuevo usuario"
+            }
+        ]
+    },
+    {
+        "category": "Servicio de inicio de sesión",
+        "commands": [
+            {
+                "command": "login level <value>",
+                "description": "Establezca el nivel mínimo de usuario permitido para iniciar sesión (ver Nivel de usuario)."
+            },
+            {
+                "command": "login reset",
+                "description": "restablecer el nivel de inicio de sesión a su valor predeterminado."
+            },
+            {
+                "command": "login text <text to print during the login>",
+                "description": "No hay descripción disponible"
+            },
+            {
+                "command": "set user level <firstname> <lastname> <level>",
+                "description": "Establezca UserLevel para el usuario, que determina si un usuario tiene una cuenta divina o puede iniciar sesión (0.7.2-dev) (ver Nivel de usuario)."
+            }
+        ]
+    }
+]

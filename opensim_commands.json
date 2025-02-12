@@ -1,0 +1,817 @@
+[
+    {
+        "category": "General Server Commands",
+        "commands": [
+            {
+                "command": "command-script [scriptfile]",
+                "description": "Runs a command script containing console commands."
+            },
+            {
+                "command": "quit",
+                "description": "shutdown the server."
+            },
+            {
+                "command": "show info",
+                "description": "show server information (version and startup path).  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "show uptime",
+                "description": "show server startup time and uptime.  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "show version",
+                "description": "show server version.  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "shutdown",
+                "description": "synonym for quit"
+            },
+            {
+                "command": "get log level",
+                "description": "In OpenSimulator 0.7.5 and later, print the current console logging level.  In OpenSimulator 0.7.4 and earlier please use the \"set log level\" command instead without a level parameter."
+            },
+            {
+                "command": "set log level [level]",
+                "description": "change the console logging level only. For example, off or debug. See Logging for more information.  In OpenSimulator 0.7.4 and earlier, if called without the level argument prints the current level.  In OpenSimulator 0.7.5 and later please use the \"get log level\" command instead.  Only available on ROBUST console from OpenSimulator 0.7.5."
+            }
+        ]
+    },
+    {
+        "category": "General",
+        "commands": [
+            {
+                "command": "command-script [scriptfile]",
+                "description": "Runs a command script containing console commands."
+            },
+            {
+                "command": "quit",
+                "description": "shutdown the server."
+            },
+            {
+                "command": "show info",
+                "description": "show server information (version and startup path).  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "show uptime",
+                "description": "show server startup time and uptime.  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "show version",
+                "description": "show server version.  Before OpenSimulator 0.7.5 this is only available on the simulator console."
+            },
+            {
+                "command": "shutdown",
+                "description": "synonym for quit"
+            },
+            {
+                "command": "get log level",
+                "description": "In OpenSimulator 0.7.5 and later, print the current console logging level.  In OpenSimulator 0.7.4 and earlier please use the \"set log level\" command instead without a level parameter."
+            },
+            {
+                "command": "set log level [level]",
+                "description": "change the console logging level only. For example, off or debug. See Logging for more information.  In OpenSimulator 0.7.4 and earlier, if called without the level argument prints the current level.  In OpenSimulator 0.7.5 and later please use the \"get log level\" command instead.  Only available on ROBUST console from OpenSimulator 0.7.5."
+            }
+        ]
+    },
+    {
+        "category": "Debug",
+        "commands": [
+            {
+                "command": "debug http [<level>]",
+                "description": "Turn on/off extra logging for HTTP request debugging.  Only available on robust console from commit 94517c8 (dev code post 0.7.3.1).  In current development code (for OpenSimulator 0.7.5) this is debug http in|out|all [<level>] since outbound HTTP messages can also now be logged (this was only possible for inbound before). For more information on this command, see Debugging."
+            }
+        ]
+    },
+    {
+        "category": "Simulator Commands",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "subsequent commands apply only to the specified region. If region name is \"root\" then all regions are selected"
+            },
+            {
+                "command": "debug packet <level>",
+                "description": "Turn on packet debugging, where OpenSimulator prints out summaries of incoming and outgoing packets for viewers, depending on the level set"
+            },
+            {
+                "command": "emergency-monitoring",
+                "description": "turn emergency debugging monitoring mode on or off."
+            },
+            {
+                "command": "help [<command>]",
+                "description": "Get general command list or more detailed help on a specific command or set of commands"
+            },
+            {
+                "command": "link-mapping",
+                "description": "Set a local grid co-ordinate to link to a remote hypergrid"
+            },
+            {
+                "command": "link-region",
+                "description": "Link a HyperGrid region. Not sure how this differs from link-mapping"
+            },
+            {
+                "command": "modules list",
+                "description": "List modules"
+            },
+            {
+                "command": "modules load <name>",
+                "description": "Load a module"
+            },
+            {
+                "command": "modules unload <name>",
+                "description": "Unload a module"
+            },
+            {
+                "command": "monitor report",
+                "description": "Returns a variety of statistics about the current region and/or simulator"
+            },
+            {
+                "command": "set terrain heights <corner> <min> <max> [<x>] [<y>]",
+                "description": "Sets the terrain texture heights on corner #<corner> to <min>/<max>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate. Corner # SW = 0, NW = 1, SE = 2, NE = 3."
+            },
+            {
+                "command": "set terrain texture <number> <uuid> [<x>] [<y>]",
+                "description": "Sets the terrain <number> to <uuid>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate."
+            },
+            {
+                "command": "show caps",
+                "description": "show all registered capabilities URLs"
+            }
+        ]
+    },
+    {
+        "category": "General",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "subsequent commands apply only to the specified region. If region name is \"root\" then all regions are selected"
+            },
+            {
+                "command": "debug packet <level>",
+                "description": "Turn on packet debugging, where OpenSimulator prints out summaries of incoming and outgoing packets for viewers, depending on the level set"
+            },
+            {
+                "command": "emergency-monitoring",
+                "description": "turn emergency debugging monitoring mode on or off."
+            },
+            {
+                "command": "help [<command>]",
+                "description": "Get general command list or more detailed help on a specific command or set of commands"
+            },
+            {
+                "command": "link-mapping",
+                "description": "Set a local grid co-ordinate to link to a remote hypergrid"
+            },
+            {
+                "command": "link-region",
+                "description": "Link a HyperGrid region. Not sure how this differs from link-mapping"
+            },
+            {
+                "command": "modules list",
+                "description": "List modules"
+            },
+            {
+                "command": "modules load <name>",
+                "description": "Load a module"
+            },
+            {
+                "command": "modules unload <name>",
+                "description": "Unload a module"
+            },
+            {
+                "command": "monitor report",
+                "description": "Returns a variety of statistics about the current region and/or simulator"
+            },
+            {
+                "command": "set terrain heights <corner> <min> <max> [<x>] [<y>]",
+                "description": "Sets the terrain texture heights on corner #<corner> to <min>/<max>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate. Corner # SW = 0, NW = 1, SE = 2, NE = 3."
+            },
+            {
+                "command": "set terrain texture <number> <uuid> [<x>] [<y>]",
+                "description": "Sets the terrain <number> to <uuid>, if <x> or <y> are specified, it will only set it on regions with a matching coordinate. Specify -1 in <x> or <y> to wildcard that coordinate."
+            },
+            {
+                "command": "show caps",
+                "description": "show all registered capabilities URLs"
+            }
+        ]
+    },
+    {
+        "category": "Appearance Commands",
+        "commands": [
+            {
+                "command": "appearance find <uuid-or-start-of-uuid>",
+                "description": "Find out which avatar uses the given asset as a baked texture, if any."
+            },
+            {
+                "command": "appearance rebake <first-name> <last-name>",
+                "description": "Send a request to the user's viewer for it to rebake and reupload its appearance textures."
+            },
+            {
+                "command": "appearance send [<first-name> <last-name>]",
+                "description": "Send appearance data for each avatar in the simulator to other viewers."
+            },
+            {
+                "command": "appearance show [<first-name> <last-name>]",
+                "description": "Show appearance information for avatars."
+            }
+        ]
+    },
+    {
+        "category": "Archive Commands",
+        "commands": [
+            {
+                "command": "load iar <first> <last> <inventory path> <password> [<archive path>]",
+                "description": "Load user inventory archive. See Inventory Archives."
+            },
+            {
+                "command": "load oar [filename]",
+                "description": "load an OpenSimulator archive. This entirely replaces the current region. Default filename is region.oar. See OpenSim Archives."
+            },
+            {
+                "command": "load xml [-newIDs [<x> <y> <z>]]",
+                "description": "Load a region's data from XML format (0.7.*: DEPRECATED and may be REMOVED soon. Use \"load xml2\" instead)"
+            }
+        ]
+    },
+    {
+        "category": "Asset Commands",
+        "commands": [
+            {
+                "command": "fcache assets",
+                "description": "Attempt a deep scan and cache of all assets in all scenes"
+            },
+            {
+                "command": "fcache clear [file] [memory]",
+                "description": "Remove all assets in the cache.  If file or memory is specified then only this cache is cleared."
+            },
+            {
+                "command": "fcache expire <datetime>",
+                "description": "Purge cached assets older then the specified date/time"
+            },
+            {
+                "command": "fcache status",
+                "description": "Display cache status"
+            },
+            {
+                "command": "j2k decode <ID>",
+                "description": "Do JPEG2000 decoding of an asset."
+            }
+        ]
+    },
+    {
+        "category": "Config Commands",
+        "commands": [
+            {
+                "command": "config get [<section>] [<key>]",
+                "description": "Get the current configuration, either for a particular key, a particular section or the whole config."
+            },
+            {
+                "command": "config save <path>",
+                "description": "Save the current configuration to a file."
+            },
+            {
+                "command": "config set <section> <key>",
+                "description": "Set a particular configuration value. On the whole, this is useless since neither OpenSimulator nor modules dynamically reload config values."
+            },
+            {
+                "command": "config show [<section>] [<key>]",
+                "description": "Synonym for 'config get'"
+            }
+        ]
+    },
+    {
+        "category": "Land Commands",
+        "commands": [
+            {
+                "command": "land show",
+                "description": "Shows all parcels on the current region."
+            },
+            {
+                "command": "land clear",
+                "description": "Clears all parcels on the land."
+            }
+        ]
+    },
+    {
+        "category": "Map Commands",
+        "commands": [
+            {
+                "command": "export-map [<path>]",
+                "description": "Save an image of the world map (default name is exportmap.jpg)"
+            },
+            {
+                "command": "generate map",
+                "description": "Regenerates and stores map tile.  Only in development code post 0.7.6."
+            }
+        ]
+    },
+    {
+        "category": "Object Commands",
+        "commands": [
+            {
+                "command": "backup",
+                "description": "Persist currently unsaved object changes immediately instead of waiting for the normal persistence call.  This shouldn't normally be required - the simulator persists region objects automatically at regular intervals and on shutdown."
+            },
+            {
+                "command": "delete object creator <UUID>",
+                "description": "Delete a scene object by creator"
+            },
+            {
+                "command": "delete object name [--regex] <name>",
+                "description": "Delete a scene object by name."
+            },
+            {
+                "command": "delete object outside",
+                "description": "Delete all scene objects outside region boundaries.  This is currently if z < 0 or z > 10000.  Object outside these bounds have been known to cause issues with OpenSimulator's use of some physics engines (such as the Open Dynamics Engine)."
+            },
+            {
+                "command": "delete object owner <UUID>",
+                "description": "Delete a scene object by owner"
+            },
+            {
+                "command": "delete object id <UUID-or-localID>",
+                "description": "Delete a scene object by uuid or localID. Pre 0.7.5, this was \"delete object uuid\"."
+            },
+            {
+                "command": "dump object id <UUID-or-localID>",
+                "description": "Dump the serialization of the given object to a file for debug purposes."
+            },
+            {
+                "command": "edit scale <name> <x> <y> <z>",
+                "description": "Change the scale of a named prim"
+            },
+            {
+                "command": "force update",
+                "description": "Force the region to send all clients updates about all objects."
+            },
+            {
+                "command": "show object name [--regex] <name>",
+                "description": "Show details of scene objects with the given name."
+            },
+            {
+                "command": "show object id <UUID-or-localID>",
+                "description": "Show details of a scene object with the given UUID or localID. Pre 0.7.5, this was \"show object uuid\"."
+            },
+            {
+                "command": "show part name [--regex] <name>",
+                "description": "Show details of scene object parts with the given name."
+            },
+            {
+                "command": "show part id <UUID-or-localID>",
+                "description": "Show details of a scene object parts with the given UUID or localID. Pre 0.7.5, this was \"show part uuid\"."
+            }
+        ]
+    },
+    {
+        "category": "Estate Commands",
+        "commands": [
+            {
+                "command": "reload estate",
+                "description": "reload estate data"
+            },
+            {
+                "command": "estate link region <estate ID> <region ID>",
+                "description": "Attaches the specified region to the specified estate."
+            },
+            {
+                "command": "estate show",
+                "description": "This command will show the estate name, ID, and owner for regions currently running in the simulator. This list does not necessarily include all estates that are present in the database."
+            }
+        ]
+    },
+    {
+        "category": "Region Commands",
+        "commands": [
+            {
+                "command": "change region <region name>",
+                "description": "subsequent commands apply only to the specified region. If region name is \"root\" then all regions are selected"
+            },
+            {
+                "command": "create region [name] [filename]",
+                "description": "Create a new region"
+            },
+            {
+                "command": "delete-region <name>",
+                "description": "Delete a region from disk."
+            },
+            {
+                "command": "region get",
+                "description": "Post OpenSimulator 0.8.0.*.  Show region parameters (Region Name, Region UUID, Location, URI, Owner ID, Flags)."
+            },
+            {
+                "command": "region restart abort [<message>]",
+                "description": "Abort a scheduled region restart, with an optional message"
+            },
+            {
+                "command": "region restart bluebox <message> <delta seconds>+",
+                "description": "Schedule a region restart. If one delta is given then the region is restarted in delta seconds time. A time to restart is sent to users in the region as a dismissable bluebox notice. If multiple deltas are given then a notice is sent when we reach each delta."
+            },
+            {
+                "command": "region restart notice <message> <delta seconds>+",
+                "description": "Schedule a region restart. Same as above except showing a transient notice instead of a dismissable bluebox."
+            },
+            {
+                "command": "region set",
+                "description": "Post OpenSimulator 0.8.0.*.  Set certain region parameters.  Currently, can set\n agent-limit - The current avatar limit for the region.  More usually this is set via the region/estate dialog in a typical viewer.  This persists over simulator restarts.\n max-agent-limit - The maximum value that agent-limit can have.  Unfortunately, setting it here does not currently persist over server restarts.  For that to happen it must be separately set as the MaxAgents parameter in the region config file."
+            },
+            {
+                "command": "agent-limit",
+                "description": "The current avatar limit for the region.  More usually this is set via the region/estate dialog in a typical viewer.  This persists over simulator restarts."
+            },
+            {
+                "command": "max-agent-limit",
+                "description": "The maximum value that agent-limit can have.  Unfortunately, setting it here does not currently persist over server restarts.  For that to happen it must be separately set as the MaxAgents parameter in the region config file."
+            },
+            {
+                "command": "remove-region",
+                "description": "remove a region from the simulator"
+            },
+            {
+                "command": "restart",
+                "description": "Restarts all sims in this instance"
+            },
+            {
+                "command": "restart region <regionname>",
+                "description": "Restarts just one sim in an instance. Set the console to the region name first, with 'change region <regionname>', or all regions will restart."
+            },
+            {
+                "command": "set region flags <Region name> <flags>",
+                "description": "Set database flags for region"
+            }
+        ]
+    },
+    {
+        "category": "Scene Commands",
+        "commands": [
+            {
+                "command": "debug scene",
+                "description": "Turn on scene debugging"
+            },
+            {
+                "command": "rotate scene <degrees>",
+                "description": "Rotates scene around 128,128 axis by x degrees where x=0-360."
+            },
+            {
+                "command": "scale scene <factor>",
+                "description": "Scales all scene objects by a factor where original size =1.0."
+            },
+            {
+                "command": "translate scene <x,y,z>",
+                "description": "Translate (move) the entire scene to a new coordinate. Useful for moving a scene to a different location on either a Mega or Variable region."
+            }
+        ]
+    },
+    {
+        "category": "Script Commands",
+        "commands": [
+            {
+                "command": "scripts resume [<script-item-uuid>]",
+                "description": "Resumes all suspended scripts"
+            },
+            {
+                "command": "scripts show [<script-item-uuid>]",
+                "description": "Show script information. <script-item-uuid> option only exists from git master 82f0e19 (2012-01-14) onwards (post OpenSimulator 0.7.2)."
+            },
+            {
+                "command": "scripts start [<script-item-uuid>]",
+                "description": "Starts all stopped scripts"
+            },
+            {
+                "command": "scripts stop [<script-item-uuid>]",
+                "description": "Stops all running scripts"
+            },
+            {
+                "command": "scripts suspend [<script-item-uuid>]",
+                "description": "Suspends all running scripts"
+            }
+        ]
+    },
+    {
+        "category": "Stats Commands",
+        "commands": [
+            {
+                "command": "show stats",
+                "description": "show useful statistical information for this server. See Frame Statistics Values below for more information."
+            },
+            {
+                "command": "stats show",
+                "description": "a synonym for \"show stats\" (OpenSimulator dev code only post 19th March 2014)."
+            },
+            {
+                "command": "stats record",
+                "description": "record stats periodically to a separate log file."
+            },
+            {
+                "command": "stats save",
+                "description": "save a snapshot of current stats to a file (OpenSimulator dev code only post 19th March 2014)."
+            }
+        ]
+    },
+    {
+        "category": "Terrain Commands",
+        "commands": [
+            {
+                "command": "terrain load",
+                "description": "Loads a terrain from a specified file. (see note1)"
+            },
+            {
+                "command": "terrain load-tile",
+                "description": "Loads a terrain from a section of a larger file."
+            },
+            {
+                "command": "terrain save",
+                "description": "Saves the current heightmap to a specified file."
+            },
+            {
+                "command": "terrain save-tile",
+                "description": "Saves the current heightmap to the larger file."
+            },
+            {
+                "command": "terrain fill",
+                "description": "Fills the current heightmap with a specified value."
+            },
+            {
+                "command": "terrain elevate",
+                "description": "Raises the current heightmap by the specified amount."
+            },
+            {
+                "command": "terrain lower",
+                "description": "Lowers the current heightmap by the specified amount."
+            },
+            {
+                "command": "terrain multiply",
+                "description": "Multiplies the heightmap by the value specified."
+            },
+            {
+                "command": "terrain bake",
+                "description": "Saves the current terrain into the regions baked map."
+            },
+            {
+                "command": "terrain revert",
+                "description": "Loads the baked map terrain into the regions heightmap."
+            },
+            {
+                "command": "terrain newbrushes",
+                "description": "Enables experimental brushes which replace the standard terrain brushes."
+            },
+            {
+                "command": "terrain show",
+                "description": "Shows terrain height at a given co-ordinate."
+            },
+            {
+                "command": "terrain stats",
+                "description": "Shows some information about the regions heightmap for debugging purposes."
+            },
+            {
+                "command": "terrain effect",
+                "description": "Runs a specified plugin effect"
+            },
+            {
+                "command": "terrain flip",
+                "description": "Flips the current terrain about the X or Y axis"
+            },
+            {
+                "command": "terrain rescale",
+                "description": "Rescales the current terrain to fit between the given min and max heights"
+            },
+            {
+                "command": "terrain min",
+                "description": "Sets the minimum terrain height to the specified value."
+            },
+            {
+                "command": "terrain max",
+                "description": "Sets the maximum terrain height to the specified value."
+            },
+            {
+                "command": "terrain modify",
+                "description": "Provides several area-of-effect terraforming commands."
+            }
+        ]
+    },
+    {
+        "category": "Tree Commands",
+        "commands": [
+            {
+                "command": "tree active",
+                "description": "Change activity state for the trees module"
+            },
+            {
+                "command": "tree freeze",
+                "description": "Freeze/Unfreeze activity for a defined copse"
+            },
+            {
+                "command": "tree load",
+                "description": "Load a copse definition from an xml file"
+            },
+            {
+                "command": "tree plant",
+                "description": "Start the planting on a copse"
+            },
+            {
+                "command": "tree rate",
+                "description": "Reset the tree update rate (mSec)"
+            },
+            {
+                "command": "tree reload",
+                "description": "Reload copse definitions from the in-scene trees"
+            },
+            {
+                "command": "tree remove",
+                "description": "Remove a copse definition and all its in-scene trees"
+            },
+            {
+                "command": "tree statistics",
+                "description": "Log statistics about the trees"
+            }
+        ]
+    },
+    {
+        "category": "User Commands",
+        "commands": [
+            {
+                "command": "alert <message>",
+                "description": "send an in-world alert to everyone"
+            },
+            {
+                "command": "alert-user <first> <last> <message>",
+                "description": "send an an in-world alert to a specific user"
+            },
+            {
+                "command": "bypass permissions <true / false>",
+                "description": "Bypass in-world permission checks"
+            },
+            {
+                "command": "debug permissions",
+                "description": "Turn on permissions debugging"
+            },
+            {
+                "command": "force permissions",
+                "description": "Force permissions on or off."
+            },
+            {
+                "command": "kick user <first> <last> [message]:",
+                "description": "Kick a user off the simulator"
+            },
+            {
+                "command": "login disable",
+                "description": "Disable user entry to this simulator"
+            },
+            {
+                "command": "login enable",
+                "description": "Enable user entry to this simulator"
+            },
+            {
+                "command": "login status",
+                "description": "Show whether logins to this simulator are enabled or disabled"
+            },
+            {
+                "command": "show users [full]- show info about currently connected users to this region. Without the 'full' option, only users actually on the region are shown. With the 'full' option child agents of users in neighbouring regions are also shown.",
+                "description": "No description available."
+            },
+            {
+                "command": "teleport user <destination>",
+                "description": "Teleport a user on this simulator to a specific destination.  Currently only in OpenSimulator development code after the 0.7.3.1 release (commit bf0b817)."
+            }
+        ]
+    },
+    {
+        "category": "Windlight/LightShare Commands",
+        "commands": [
+            {
+                "command": "windlight load",
+                "description": "Load windlight profile from the database and broadcast"
+            },
+            {
+                "command": "windlight enable",
+                "description": "Enable the windlight plugin"
+            },
+            {
+                "command": "windlight disable",
+                "description": "Disable the windlight plugin"
+            }
+        ]
+    },
+    {
+        "category": "YEngine Commands",
+        "commands": [
+            {
+                "command": "yeng help",
+                "description": "No description available."
+            },
+            {
+                "command": "yeng reset -all | <part-of-script-name>",
+                "description": "No description available."
+            },
+            {
+                "command": "yeng resume",
+                "description": "resume script processing"
+            },
+            {
+                "command": "yeng suspend",
+                "description": "suspend script processing"
+            },
+            {
+                "command": "yeng ls -full -max=<number> -out=<filename> -queues -topcpu",
+                "description": "No description available."
+            },
+            {
+                "command": "yeng cvv",
+                "description": "show compiler version value"
+            },
+            {
+                "command": "yeng mvv [<newvalue>]",
+                "description": "show migration version value"
+            },
+            {
+                "command": "yeng tracecalls [yes | no]",
+                "description": "No description available."
+            },
+            {
+                "command": "yeng verbose [yes | no]",
+                "description": "No description available."
+            },
+            {
+                "command": "yeng pev -all | <part-of-script-name> <event-name> <params...>",
+                "description": "No description available."
+            }
+        ]
+    },
+    {
+        "category": "ROBUST Service Commands",
+        "commands": [
+            {
+                "command": "delete asset <ID>",
+                "description": "Delete an asset from the database. Doesn't appear to be implemented."
+            },
+            {
+                "command": "dump asset <ID>",
+                "description": "Dump an asset to the filesystem.  OpenSimulator 0.7.3 onwards."
+            },
+            {
+                "command": "show digest <ID>",
+                "description": "Show summary information about an asset. From OpenSimulator 0.7.3 onwards this will be renamed to \"show asset\""
+            }
+        ]
+    },
+    {
+        "category": "Asset Service",
+        "commands": [
+            {
+                "command": "delete asset <ID>",
+                "description": "Delete an asset from the database. Doesn't appear to be implemented."
+            },
+            {
+                "command": "dump asset <ID>",
+                "description": "Dump an asset to the filesystem.  OpenSimulator 0.7.3 onwards."
+            },
+            {
+                "command": "show digest <ID>",
+                "description": "Show summary information about an asset. From OpenSimulator 0.7.3 onwards this will be renamed to \"show asset\""
+            }
+        ]
+    },
+    {
+        "category": "Grid Service",
+        "commands": [
+            {
+                "command": "set region flags <Region name> <flags>",
+                "description": "Set database flags for region"
+            },
+            {
+                "command": "show region <Region name>",
+                "description": "Show the details of a given region.  This command is renamed to \"show region name\" in development versions of OpenSimulator."
+            }
+        ]
+    },
+    {
+        "category": "User Service",
+        "commands": [
+            {
+                "command": "create user [first] [last] [passw] [Email] [Primary UUID] [Model}",
+                "description": "creates a new user"
+            }
+        ]
+    },
+    {
+        "category": "Login Service",
+        "commands": [
+            {
+                "command": "login level <value>",
+                "description": "Set the miminim userlevel allowed to login (see User Level)."
+            },
+            {
+                "command": "login reset",
+                "description": "reset the login level to its default value."
+            },
+            {
+                "command": "login text <text to print during the login>",
+                "description": "No description available."
+            },
+            {
+                "command": "set user level <firstname> <lastname> <level>",
+                "description": "Set UserLevel for the user, which determines whether a user has a god account or can login at all (0.7.2-dev) (see User Level)."
+            }
+        ]
+    }
+]

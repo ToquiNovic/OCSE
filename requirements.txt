@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+spacy
+faiss-cpu
+numpy
+scikit-learn
