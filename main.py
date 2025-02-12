@@ -16,8 +16,10 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["Content-Type", "Authorization"],
+    expose_headers=["Content-Type", "Authorization"],
 )
+
 
 # Cargar el modelo de SpaCy en español
 nlp = spacy.load("es_core_news_md")
