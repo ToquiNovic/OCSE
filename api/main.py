@@ -49,7 +49,7 @@ X_array = X.toarray().astype('float32')
 X_array /= np.linalg.norm(X_array, axis=1, keepdims=True)
 
 # Crear el índice de Faiss y agregar los datos
-index = faiss.IndexFlatIP(X_array.shape[1])  # Cambié L2 por IP para similitud coseno
+index = faiss.IndexFlatIP(X_array.shape[1]) 
 index.add(X_array)
 
 def fast_search_command(query):
@@ -69,7 +69,7 @@ def fast_search_command(query):
                 "command": commands[idx],
                 "description": descriptions[idx],
                 "category": categories[idx],
-                "score": round(float(score) * 100, 2)  # Convertimos la similitud en porcentaje
+                "score": round(float(score) * 100, 2) 
             })
 
     return results if results else [{"message": "❌ No se encontraron comandos similares."}]
@@ -90,7 +90,7 @@ async def search(request: SearchRequest):
 async def root():
     return {"message": "✅ Servidor de búsqueda de comandos abiertos abiertos en español funcionando."}
 
-# Iniciar el servidor con `python train.py`
+# Iniciar el servidor con `python main.py`
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8888)
