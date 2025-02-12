@@ -20,7 +20,6 @@ app.add_middleware(
     expose_headers=["Content-Type", "Authorization"],
 )
 
-
 # Cargar el modelo de SpaCy en español
 nlp = spacy.load("es_core_news_md")
 
@@ -86,6 +85,10 @@ async def search(request: SearchRequest):
         return JSONResponse(content=results)
     else:
         raise HTTPException(status_code=400, detail="No query provided")
+
+@app.get("/")
+async def root():
+    return {"message": "✅ Servidor de búsqueda de comandos abiertos abiertos en español funcionando."}
 
 # Iniciar el servidor con `python train.py`
 if __name__ == "__main__":
